@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block loader %} {% include 'loader.html' %} {% endblock loader %}
+{% block header %} {% include 'header.html' %} {% endblock header %}
+{% block banner %} {% include 'banner.html' %} {% endblock banner %}
+{% block content %}
+<div class="container mt-5 mb-5">
+  <h1 class="title">Your chechout page</h1>
+  <div class="row cart">
+    <div></div>
+    <table>
+      <thead>
+        <th>action</th>
+        <th>image</th>
+        <th>ltem</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Amount</th>
+      </table>
+      <tbody>
+        
+        {% for product in cart %}
+          <tr class="item">
+            <td><img src="{{product.furniture.pix.url}}" alt="" style="height: 50px; width: 70px"></td>
+            <td><span>{{product.furniture.name}}</span></td>
+            <td>{{product.price}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.amount|floatformat:2}}</td>
+          </tr>
+        {% endfor %}
+
+        <tr class="total">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><b>Total =</b></td>
+          <td>#{{total}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <button class="btn btnback"><a href="{% url 'cart' %}"></a>Back</button>
+    </div>
+  <div class="col-12 col-md-6 chechout">
+        <form action="{% url 'payment' %}" method="POST">
+          {% csrf_token %}
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">First Name</label>
+              <input type="text" class="form-control" name="first_name" value="{{userprof.first_name}}" id="exampleFormControlInput1" >
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+              <input type="text" class="form-control" name="last_name" value="{{userprof.last_name}}" id="exampleFormControlInput1" >
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Phone</label>
+              <input type="text" class="form-control"  name="phone" value="{{userprof.phone}}" id="exampleFormControlInput1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Email</label>
+              <input type="email" class="form-control" name="email" value="{{userprof.email}}" id="exampleFormControlTextarea1" rows="3"  placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label"> Shipping Address</label>
+              <input type="hidden" name="total" value="{{total}}">
+              <input type="text" name= "address"class="form-control" value="{{userprof.address}}" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div> 
+            <div class="mb-3">
+              <button class="submit">Pay Now</button>
+            </div>
+        </form>
+      </div>
+     </div>
+ </div>
+{% endblock content %}
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}

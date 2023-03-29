@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block loader %} {% include 'loader.html' %} {% endblock loader %}
+{% block header %} {% include 'header.html' %} {% endblock header %}
+{% block carousel %} {% include 'carousel.html' %} {% endblock carousel %}
+{% block content %}
+
+<div class="container">
+    <div class="row mt-5 product">
+            
+        {% if item != None and searched_item.count > 0 %}
+
+        <h1 class="title">Here is the result for your search {{item}}</h1>
+
+        {% for product in searched_item %}
+            <div class="col-12 col-md-6 col-lg-3 mt-5 product">
+                <div class="card">
+                    <a href="{% url 'detail' product.id item.slug %}"><img src="{{product.pix.url}}" class="card-img-top" alt="..."></a>
+                    <div class="card-body">
+                    <h5 class="card-title">{{product.name|title}}</h5>
+                    <p class="card-text">₦{{product.price}}</p>
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+        {% else %}
+        <h1 class="title">your serach for {{item}} is not found</h1>
+        {% endif %}
+    </div>         
+</div>
+{% endblock content %}
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}

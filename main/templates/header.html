@@ -1,0 +1,111 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container">
+        <a class="navbar-brand" href="/index.html"><img src="{{info.logo.url}}" alt="" style="height: 50px;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                
+                {% if user.is_authenticated %}
+
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href=" {% url 'products' %} ">Products</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Category
+                    </a>
+                    <ul class="dropdown-menu">
+                        {% for item in fdog %}
+                            <li><a class="dropdown-item" href="{% url 'category' item.id item.slug %}">{{item.name|title}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    <!-- <a class="nav-link disabled">Disabled</a> -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href=" {% url 'cart' %}">
+                        <div class="wrapper">
+                            <i class="bi bi-cart3"></i>
+                            <span class="badge">{{itemcount}}</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        
+                        {% if user.customer %}
+                           <img src="{{user.customer.pix.url}}" alt="" style="height: 30px;">
+                            
+                        {% endif %}
+                            
+                        <span>Hi! {{user.username}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+                        <li><a class="dropdown-item" href="{% url 'signout' %}">Logout</a></li>
+                    </ul>
+                </li>
+
+                {% else %}
+                
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href=" {% url 'products' %} ">Products</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Category
+                    </a>
+                    <ul class="dropdown-menu">
+                        {% for item in fdog %}
+                            <li><a class="dropdown-item" href="{% url 'category' item.id item.slug %}">{{item.name|title}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    <!-- <a class="nav-link disabled">Disabled</a> -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'signin' %}">Login</a>
+                    <!-- <a class="nav-link disabled">Disabled</a> -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'signup' %}">Register</a>
+                    <!-- <a class="nav-link disabled">Disabled</a> -->
+                </li>
+                {% endif %}
+                
+            </ul>
+            <form class="d-flex search" role="search" action="{% url 'search' %}" method="POST">
+                 {% csrf_token %}
+                <input class="form-control me-2" name= "serach" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            <div class="samson">
+                <i class="bi bi-moon-fill"></i>
+                <!-- <i class="bi bi-brightness-high-fill"></i> -->
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- pop-up  -->
+<!-- iterate first  -->
+
+{% for item in messages %}
+    <div class="alert alert-success alert-dismissible fade show text-center mb-0" role="alert">
+        <strong>{{item|title}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endfor %}
+    

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block loader %} {% include 'loader.html' %} {% endblock loader %}
+{% block header %} {% include 'header.html' %} {% endblock header %}
+{% block banner %} {% include 'banner.html' %} {% endblock banner %}
+{% block content %}
+<!-- content  -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-12 col-md-6 fcont">
+            <form action="{% url 'contact' %}" method='POST'>
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Full Name</label>
+                    <input type="text" name="full_name" class="form-control"  id="exampleFormControlInput1" placeholder="John Doe">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                    <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                    <textarea class="form-control" name="messages" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <button class="btn" type="submit">Send</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-12 col-md-6">
+            <iframe class="map"  style="height: 53vh;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4082679909566!2d3.3383859644131277!3d6.596074545229847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b92270e586183%3A0x8a62805c203e565b!2sComputer%20Village%2C%20Ikeja%20101233%2C%20Ikeja%2C%20Lagos!5e0!3m2!1sen!2sng!4v1675071121645!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}

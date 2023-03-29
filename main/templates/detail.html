@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block loader %} {% include 'loader.html' %} {% endblock loader %}
+{% block header %} {% include 'header.html' %} {% endblock header %}
+{% block banner %} {% include 'banner.html' %} {% endblock banner %}
+{% block content %}
+<div class="container my-5">
+    <div class="row fdet">
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-6">
+                    <img src="{{det.pix.url}}" class="img-fluid rounded-start" alt="..." style="height: 60vh; width: 500px;">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h5 class="card-title">{{det.name|title}}</h5>
+                        <h5 class="card-title">₦{{det.price}}</h5>
+                        <hr>
+                        <p class="card-text">{{det.description|title}}</p>
+                        <button class="btn" type="submit">Add to cart</button>
+                        <p class="fdetcat fst-italic">Category: <span>{{det.category|title}}</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+{% endblock content %}
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}

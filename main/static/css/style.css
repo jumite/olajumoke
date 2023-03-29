@@ -1,0 +1,627 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+/* LOADER  */
+.loader_cont {
+    width: 100%;
+    height: 100vh;
+    background: rgb(235, 228, 228);
+    transition: all .5s ease;
+    position: absolute;
+    z-index: 999999;
+}
+
+.loader_cont .loader {
+    width: 100px;
+    height: 100px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 15px dashed white;
+    position: absolute;
+    margin: auto;
+    border-top-color: red;
+    border-radius: 50%;
+    animation: spin .8s linear infinite;
+}
+@keyframes spin {
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/* HEADER  */
+.navbar {
+    background: var(--bg) !important;
+}
+.navbar-nav a {
+    color: var(--text);
+    font-weight: 600;
+
+}
+.navbar-nav a:hover {
+    color: orangered;
+}
+
+.wrapper {
+    position: relative;
+}
+.wrapper span {
+    position: absolute;
+    right: -10px;
+    top: -2px;
+    background-color: orangered;
+    font-size: 10px;
+    border-radius: 50%;
+}
+.nav-link img {
+    border: 1px solid orangered;
+    border-radius: 50%;
+}
+.search button {
+    background-color: orangered;
+    border: none;
+    color: black;
+    font-weight: 500;
+}
+.search button:hover {
+    background-color: black;
+    color: white;
+}
+
+
+/* CAROUSEL */
+.carousel-item img {
+    height: 80vh;
+}
+.carousel-control-prev {
+    font-size: 50px;
+    color: orangered;
+}
+.carousel-control-next {
+    font-size: 50px;
+    color: orangered;
+}
+.carousel-indicators .active{
+    background-color: orangered !important;
+    /* important is to overide bootstrap color styling if sytling in not taking effect */
+}
+
+
+
+
+/* CONTENT  */
+.fcat {
+    transition: 0.5s;
+}
+/* .fcat .card img:hover {
+    transform: scale(0.7);
+} */
+/* .card-img:hover {
+    transform: scale(0.7);
+
+} */
+.fcat:hover {
+    transform: scale(1.2);
+}
+.card-img {
+    height: 40vh;
+}
+
+.title {
+    text-transform: capitalize;
+    text-align: center;
+}
+.title::after {
+    content: '';
+    width: 180px;
+    display: block;
+    height: 2px;
+    background-color: orangered;
+    margin-left: auto;
+    margin-right: auto;
+}
+.fprod .card {
+    border: 1px solid orangered;
+    box-shadow: 5px 5px 20px 5px orange;
+    transition: 1s;
+    color: var(--card);
+}
+.fprod .card:hover {
+    transform: translateY(-30px);
+}
+.fprod .card img {
+    height: 40vh;
+}
+
+
+.bi-truck,
+.bi-credit-card,
+.bi-cash,
+.bi-telephone {
+    font-size: 40px;
+}
+.ship {
+    margin-top: 8%;
+    margin-bottom: 5%;
+}
+
+
+
+
+
+/* FOOTER  */
+footer {
+    background-color: orangered;
+}
+.foota h4 {
+    text-transform: capitalize;
+}
+.foota ul a {
+    text-decoration: none;
+    color: white;
+}
+.foota p {
+    color: white;
+}
+.foota ul li {
+    color: white;
+    text-transform: capitalize;
+}
+.social i {
+    margin-left: 5px;
+}
+.social i:hover {
+    color: black;
+}
+.footb {
+    background-color: black;
+    color: white;
+    text-align: center;
+    text-transform: capitalize;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-bottom: 0%;
+}
+
+
+
+
+/* PRODUCTS PAGE  */
+
+/* banner  */
+.banner {
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(../img/carousel\ -\ 4.jpg);
+    /* background-image: url(/img/carousel\ -\ 4.jpg); */
+    height: 40vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.banner p {
+    margin-top: 15%;
+    color: orangered;
+    font-weight: 500;
+    font-size: 20px;
+    margin-left: 5%;
+}
+.banner a {
+    text-decoration: none;
+    color: orangered;
+}
+.banner span {
+    color: white;
+}
+.banner span:hover {
+    color: orangered;
+}
+
+/* content  */
+.product .card {
+    border: 1px solid orange;
+    border-radius: 10%;
+    box-shadow: 5px 5px 15px 5px orange;
+    transition: 1s;
+}
+.product .card:hover {
+    transform: translateY(-30px);
+}
+.product img {
+    padding: 5%;
+    height: 200px;
+    border-bottom: 2px solid;
+}
+.product .card-body {
+    text-align: center;
+}
+.product .btn {
+    background-color: orangered;
+    border: none;
+}
+
+/* pagination  */
+.pagination a {
+    color: orangered;
+    font-weight: 500;
+}
+.pagination a:hover {
+    background-color: black;
+    color: white;
+}
+
+
+/* DETAILS PAGE  */
+.fdet .card {
+    border: none;
+}
+.fdet .btn {
+    background-color: orangered;
+    color: black;
+    margin-top: 2%;
+}
+.fdet .btn:hover {
+    background-color: black;
+    color: white;
+}
+.fdet p {
+    color: black;
+}
+.fdetcat {
+    font-weight: 500;
+    padding-top: 2%;
+}
+
+
+/* CONTACT */
+.fcont .btn {
+    background-color: orangered;
+    width: 100%;
+    font-weight: 500;
+    color: white;
+}
+/* .fcont .btn:hover {
+    background-color: orangered;
+    color: black;
+} */
+
+
+
+
+/* SIGNUP */
+.fsign {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    border: 1px solid orangered;
+    padding: 3%;
+    box-shadow: 5px 5px 15px 5px orange;
+}
+.fsign form label {
+    color: black;
+    font-weight: 500;
+}
+.fsign form input:focus {
+    border: 1px solid red !important;
+    /* border: none !important; */
+    outline: none;
+    /* outline: 1px solid orangered; */
+}
+.fsign .btn {
+    background-color: orangered;
+    width: 100%;
+    color: black;
+    font-weight: 500;
+}
+.fsign p {
+    padding-top: 3%;
+    color: black;
+    font-weight: 500;
+}
+.fsign a {
+    color: orangered;
+    text-decoration: none;
+}
+.pass{
+    position: relative;
+}
+.see {
+    position: absolute;
+    top: 52%;
+    right: 20px;
+    cursor: pointer;
+}
+.see .bi-eye {
+    display: none;
+}
+.see .hide .bi-eye {
+    display: block;
+}
+.see .hide .bi-eye-slash {
+    display: none;
+}
+
+
+/* CART  */
+.cart table {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 4%;
+    border: 1px solid orangered;
+    /* border-collapse: collapse !important; */
+    text-align: center;
+}
+.cart thead {
+    background-color: orangered;
+    text-transform: capitalize;
+    color: white;
+}
+.item td {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-weight: 500;
+    border: 1px solid orangered;
+}
+.cart .checkbtn a {
+    text-decoration: none;
+    color: white;
+}
+.item i {
+    color: orangered;
+}
+.item button {
+    border: none;
+}
+.subtot td {
+    font-size: 18px;
+    padding-top: 2%;
+    font-weight: 600;
+}
+
+
+
+
+
+/* CHECKOUT */
+.total {
+    font-size: 20px;
+    font-weight: 500;
+}
+.checkout .btn{
+    background-color: orangered;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    color: white;
+}
+.checkout .btn:hover{
+    background-color: black;
+}
+.checkout label {
+    font-weight: 500;
+}
+.cart .btnback {
+    background-color: black;
+    margin-top: 27%;
+    margin-left: 10%;
+    width: 20%;
+}
+.cart .btnback:hover {
+    background-color: orangered;
+}
+.cart .btnback a{
+    text-decoration: none;
+    color: white;
+}
+.item img {
+    transition: 0.5s;
+    cursor: pointer;
+}
+.item img:hover {
+    scale: 3;
+}
+
+
+
+/* PROFILE */
+.pavat {
+    text-align: center;
+    background-color: orange;
+    border-radius: 1rem;
+    height: 70vh;
+}
+.pavat img {
+    height: 150px;
+    border-radius: 100%;
+    padding-top: 10%;
+}
+.pavat p {
+    color: white;
+    font-style: italic;
+    text-transform: capitalize;
+    padding-top: 5%;
+}
+.pavat a {
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 20px;
+    color: black;
+}
+.pavat a:hover {
+    color: orangered;
+    font-weight: bolder;
+}
+.pdet table {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    border: 2px solid orangered;
+    margin-top: 5%;
+    height: 50vh;
+    text-align: center;
+    /* padding: 5%; */
+}
+.pdet table td {
+    border: 1px solid orangered;
+}
+.left {
+    font-weight: 600;
+}
+
+
+/* PROFILE UPDATE */
+.pupdate form {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    border: 2px dashed orangered;
+    padding: 3%;
+}
+.pupdate form label {
+    font-weight: 600;
+}
+.pupdate button {
+    background-color: orangered;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    color: white;
+    font-weight: 500;
+}
+.pupdate .btn:hover {
+    background-color: black;
+}
+
+
+/* CALLBACK */
+.thank {
+    text-align: center;
+    margin-top: 7%;
+    width: 50%;
+    margin-left: 18%;
+}
+.thank img {
+    height: 20vh;
+}
+.thank p {
+    font-size: 20px;
+}
+.thank span {
+    text-transform: capitalize;
+    color: orangered;
+    font-weight: 500; 
+}
+.thank button {
+    background-color: orangered;
+}
+.thank button:hover{
+    background-color: black;
+}
+.thank a {
+    text-decoration: none;
+    color: white;
+}
+
+/* TOGGLE SWITCH  */
+.samson {
+    margin-left: 3%;
+    cursor: pointer;
+}
+:root {
+    --bg: white;
+    --icon: black;
+    --text: black;
+}
+.dark {
+    --bg: black;
+    --icon: white;
+    --text: white;
+    --card: black;
+}
+body {
+    background: var(--bg);
+    color: var(--text);
+    overflow: none;
+}
+
+
+/* MEDIA QUERY (RESPONSIVENESS) */
+@media (min-width: 320px) and (max-width: 765px) {
+    /* INDEX  */
+    .carousel-item img {
+        height: 40vh;
+    }
+    .carousel-control-prev {
+        font-size: 30px;
+    }
+    .carousel-control-next {
+        font-size: 30px;
+    }
+
+    /* CART LOGO WRAPPER  */
+    .wrapper span {
+        right: 90%;
+    }
+
+    /* PRODUCTS CONTENT  */
+    .fprod_cont {
+        margin-top: -40px !important;
+        border: 1px solid red;
+    }
+
+    /* CALLBACK  */
+    .thank {
+        margin-left: 25%;
+    }
+    .thank img {
+        height: 15vh;
+        margin-left: -50px;
+    }
+
+    /* CART  */
+    .cart table {
+        width: 10% !important;
+        margin-left: 1%;
+        margin-right: 1%;
+        /* margin-top: 4%; */
+        /* border: 1px solid orangered; */
+        /* border-collapse: collapse !important; */
+        /* text-align: center; */
+        font-size: 10px;
+
+    }
+    /* .cart thead {
+        background-color: orangered;
+        text-transform: capitalize;
+        color: white;
+        font-size: 10px;
+
+    } */
+    /* .item td {
+        padding-top: 2%;
+        padding-bottom: 2%;
+        font-weight: 500;
+        border: 1px solid orangered;
+    } */
+    /* .cart .checkbtn a {
+        text-decoration: none;
+        color: white;
+    } */
+    /* .item i {
+        color: orangered;
+    } */
+    /* .item button {
+        border: none;
+    } */
+    .subtot td {
+        font-size: 12px;
+        padding-top: 2%;
+        font-weight: 600;
+    }
+
+}
+/* ASSIGNMENT */
+/* Style all pages to nake sure it is all responsive  */

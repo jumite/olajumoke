@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block loader %} {% include 'loader.html' %} {% endblock loader %}
+{% block header %} {% include 'header.html' %} {% endblock header %}
+{% block banner %} {% include 'banner.html' %} {% endblock banner %}
+{% block content %}
+<!-- content  -->
+<div class="container">
+    <h1 class="title mt-5">{{categ.name|title}}</h1>
+    
+    
+    <div class="row my-5">
+        {% for item in catprod %}
+        <div class="col-12 col-md-6 col-lg-3 mt-5 product">
+            <div class="card">
+                <a href="{% url 'detail' item.id item.slug %}"><img src="{{item.pix.url}}" class="card-img-top" alt="..."></a>
+                <div class="card-body">
+                  <h5 class="card-title">{{item.name|title}}</h5>
+                  <p class="card-text">₦{{item.price}}</p>
+                  <a href="#" class="btn btn-primary">Add to cart</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+        
+    
+</div>
+ 
+{% endblock content %}
+{% block footer %} {% include 'footer.html' %} {% endblock footer %}
